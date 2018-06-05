@@ -4,6 +4,7 @@ const express = require('express');
 const Sequelize = require('sequelize');
 
 dotenv.load();
+const PORT = process.env.PORT || 3000;
 const db = {
     pass: process.env.POSTGRES_PASS,
     user: process.env.POSTGRES_USER,
@@ -87,6 +88,6 @@ app.post('/delete', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('listening on port 3000');
 })
